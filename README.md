@@ -1,5 +1,10 @@
 #PROJECT: 0x11. C - printf
-This project is a collaborative project carried out my JIMMY MKPOIKANA & ONABOWALE SIMEON.
+
+This project is a collaborative project carried out by:
+JIMMY MKPOIKANA (https://github.com/Mkpos) &
+ONABOWALE SIMEON (https://github.com/Ximeon Leo)
+Date: 21st April, 2023 
+Cohort: 13
 
 Tasks:
 0. Write a function that produces output according to a format.
