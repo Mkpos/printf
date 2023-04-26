@@ -7,11 +7,11 @@
 #include <unistd.h>
 
 
-/* Length Modifier Macros */
+/* Modifier Macros(Length) */
 #define SHORT 1
 #define LONG 2
 
-/* Flag Modifier Macros */
+/* Modifier Macros(Flags) */
 #define PLUS 1
 #define SPACE 2
 #define HASH 4
@@ -25,10 +25,10 @@
 
 
 /**
- * struct buffer_s - A new type defining a buffer struct.
- * @buffer: A pointer to a character array.
+ * struct buffer_s - A func defining a buffer struct.
+ * @buffer: A pointer to a char array.
  * @start: A pointer to the start of buffer.
- * @len: The length of the string stored in buffer.
+ * @len: len of the str stored in buffer.
  */
 typedef struct buffer_s
 {
@@ -39,9 +39,9 @@ typedef struct buffer_s
 
 
 /**
- * struct converter_s - A new type defining a converter struct.
- * @specifier: A character representing a conversion specifier.
- * @func: A pointer to a conversion function corresponding to specifier.
+ * struct converter_s - This is a func defining a converter struct.
+ * @specifier: A char rep a conversion specifier.
+ * @func: A pointer function.
  */
 typedef struct converter_s
 {
@@ -51,9 +51,9 @@ typedef struct converter_s
 } converter_t;
 
 /**
- * struct flag_s - A new type defining a flags struct.
- * @flag: A character representing a flag.
- * @value: The integer value of the flag.
+ * struct flag_s - A function defining a flags struct.
+ * @flag: A char rep a flag.
+ * @value: The intr val of the flag.
  */
 typedef struct flag_s
 {
@@ -63,7 +63,7 @@ typedef struct flag_s
 
 int _printf(const char *format, ...);
 
-/* Conversion Specifier Functions */
+/* Specifier Functions for Conversion */
 unsigned int convert_c(va_list args, buffer_t *output,
 		unsigned char flags, int wid, int prec, unsigned char len);
 unsigned int convert_s(va_list args, buffer_t *output,
@@ -92,7 +92,7 @@ unsigned int convert_R(va_list args, buffer_t *output,
 		unsigned char flags, int wid, int prec, unsigned char len);
 
 
-/* Handlers */
+/* The Handlers */
 unsigned char handle_flags(const char *flags, char *index);
 unsigned char handle_length(const char *modifier, char *index);
 int handle_width(va_list args, const char *modifier, char *index);
@@ -100,7 +100,7 @@ int handle_precision(va_list args, const char *modifier, char *index);
 unsigned int (*handle_specifiers(const char *specifier))(va_list, buffer_t *,
 		unsigned char, int, int, unsigned char);
 
-/* Modifiers */
+/* List of Modifier functions */
 unsigned int print_width(buffer_t *output, unsigned int printed,
 		unsigned char flags, int wid);
 unsigned int print_string_width(buffer_t *output,
@@ -108,7 +108,7 @@ unsigned int print_string_width(buffer_t *output,
 unsigned int print_neg_width(buffer_t *output, unsigned int printed,
 		unsigned char flags, int wid);
 
-/* Helper Functions */
+/* list of Helper Functions */
 buffer_t *init_buffer(void);
 void free_buffer(buffer_t *output);
 unsigned int _memcpy(buffer_t *output, const char *src, unsigned int n);
