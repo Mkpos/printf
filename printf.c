@@ -1,11 +1,11 @@
 #include "main.h"
 
 void cleanup(va_list args, buffer_t *output);
-int mk_printf(const char *format, va_list args, buffer_t *output);
+int run_printf(const char *format, va_list args, buffer_t *output);
 int _printf(const char *format, ...);
 
 /**
- * cleanup - A function thst Peforms cleanup operations for _printf.
+ * cleanup - A function that Peforms cleanup operations for _printf.
  * @args: This is a va_list of arguments provided to _printf.
  * @output: Represent A buffer_t struct.
  */
@@ -18,7 +18,7 @@ void cleanup(va_list args, buffer_t *output)
 }
 
 /**
- * mk_printf - This function Reads through the formated string for _printf.
+ * run_printf - This function Reads through the formated string for _printf.
  * @format: Character string to print - may contain directives.
  * @output: buffer_t struct containing a buffer.
  * @args: va_list of arguments.
@@ -26,7 +26,7 @@ void cleanup(va_list args, buffer_t *output)
  * Return: numb of chars stored to output
  */
 
-int mk_printf(const char *format, va_list args, buffer_t *output)
+int run_printf(const char *format, va_list args, buffer_t *output)
 {
 	int zu = 0;
 	int wid;
@@ -94,7 +94,7 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	man = mk_printf(format, args, output);
+	man = run_printf(format, args, output);
 
 	return (man);
 }
